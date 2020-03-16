@@ -8,6 +8,7 @@ function closeAlert(){
 
 function openAlert(){
     const div = document.getElementById("alert")
+    div.style.opacity = "1"
     setTimeout(function(){ 
         div.style.display = "block"
     }, 600);
@@ -20,7 +21,7 @@ function pegaTexto(){
     if(texto.length == 0){
         openAlert()
     } else {
-        let palavrasTexto = texto.split(' ')
+        let palavrasTexto = texto.split(/[., ?!()]/)
         for (let s in palavrasTexto){
             if(qtdPalavras[0].indexOf(palavrasTexto[s]) != -1){
                 qtdPalavras[1][qtdPalavras[0].indexOf(palavrasTexto[s])]++
@@ -30,6 +31,10 @@ function pegaTexto(){
                 qtdPalavras[1].push(1)
             }
         }
+
+        let posicaovazia = qtdPalavras[0].indexOf('')
+        qtdPalavras[0].splice(posicaovazia,1)
+        qtdPalavras[1].splice(posicaovazia,1)
         
         for(let i = 0; i < qtdPalavras[0].length; i++){
             for (let j = 0; j < qtdPalavras[0].length; j++){
