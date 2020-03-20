@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Frequency</title>
+    <link rel="stylesheet" href="wordstyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina+2&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="img"></div>
+
+    <div id="corpo">
+
+        <div id="main">
+            
+            <h1 id="cabecalho">Word Frequency</h1>
+
+            <div id="areatexto">
+                <textarea id="inputtext" maxlength="2048" placeholder="Input your text here."></textarea>
+            </div>
+
+            <div id="areabotao">
+
+                <div id="alert">
+                    <span class="close" onclick="closeAlert()">&times;</span>
+                    <strong>[ERROR: 1]</strong> Your text is empty!
+                </div>
+
+                <input class="botao" type="submit" value="Translate" onclick="pegaTexto()">
+            </div>
+        </div>
+        <div id="resultado">
+            
+        </div>
+
+        <footer>
+            <p>Samuel Carlos&trade;</p>
+        </footer>
+
+    </div>
+
+    <script src="wordscript.js"></script>
+</body>
+</html>
